@@ -107,7 +107,7 @@ A: 把树结构转变成链表结构
 
 
 
-![image-20240328181004160](/Users/lihaoran/Library/Application Support/typora-user-images/image-20240328181004160.png)
+![image-20240328181004160.png](https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/1c72ed494fb9497784abae43962a66b8~tplv-k3u1fbpfcp-jj-mark:0:0:0:0:q75.image#?w=1584&h=1052&s=212459&e=png&b=fdfdfd)
 
 以上的内容是react团队提出的fiber架构，其主要特性有：
 
@@ -136,7 +136,7 @@ A: 把树结构转变成链表结构
 
 大白话： 
 
-![image-20240328192108014](/Users/lihaoran/Library/Application Support/typora-user-images/image-20240328192108014.png)
+![image-20240328192108014.png](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/5c512cf8585d4b4eae81492fd6cb64ec~tplv-k3u1fbpfcp-jj-mark:0:0:0:0:q75.image#?w=676&h=590&s=36520&e=png&b=ffffff)
 
 按照上面我们做的东西渲染上面这个dom结构的时候有可能会发生这样的情况，B组件是个按钮执行一些东西， 当我们分块渲染的时候，可能渲染好A，B，C之后用户点击了B组件的按钮，去执行更高优先级的任务，假如这个任务两秒，那么有可能会发生这样的事情，页面呈现出来了A、B、C，等两秒+之后才去呈现D、E、F。那么针对这个问题如何去解决？
 我们现在做的版本是每个任务都去append到dom里。这是问题出现的关键点。
@@ -161,7 +161,7 @@ append的dom： 需要知道根节点。
 2. 区分fc和非fc
 3. 添加到视图的处理。
 
-![image-20240328231911896](/Users/lihaoran/Library/Application Support/typora-user-images/image-20240328231911896.png)
+![image-20240328231911896.png](https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/25383c04cdee4548934eb35bd452fd9a~tplv-k3u1fbpfcp-jj-mark:0:0:0:0:q75.image#?w=2074&h=1274&s=369635&e=png&b=fefefe)
 
 
 
