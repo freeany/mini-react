@@ -46,11 +46,15 @@ function createDom(type) {
 function updateProps(dom, props) {
 	Object.keys(props).forEach(key => {
 		if (key !== 'children') {
+			if (key.startsWith('on')) {
+				dom.addEventListener(key.slice(2).toLowerCase(), props[key])
+			}
 			dom[key] = props[key]
 		}
 	})
 }
 function initChildren(fiber, children) {
+	// console.log(fiber)
 	let prevChild = null // 上一个child
 	children.forEach((child, index) => {
 		// 创建一个新对象来保存parent

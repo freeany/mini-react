@@ -167,3 +167,22 @@ append的dom： 需要知道根节点。
 
 ## v6重构
 
+
+
+
+
+## v7
+
+目标：实现绑定事件
+
+问题： 如何点击触发更新？
+
+解决思路：基于onClick来注册点击事件。
+
+Q：如何更新props？
+
+A：也就是对比 new vdom tree 和 old vdom tree，那么：
+
+1. 如何得到新的dom树
+2. 如何找到老的节点
+3. 如何diff props
